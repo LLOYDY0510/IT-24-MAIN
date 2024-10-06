@@ -45,4 +45,4 @@ console.log(`The number ${number} is: ${primeStatus}`);
 // Determine if a string is a palindrome
 const testString = "racecar";
 palindromeStatus = isPalindrome(testString);
-console.log(`The string "${testString}" is: ${palindromeStatus}`);s
+console.log(`The string "${testString}" is: ${palindromeStatus}`);
