@@ -23,7 +23,7 @@ class StudentList {
         studentListContainer.innerHTML = students.map(student => 
             `<button class="btn btn-primary" style="margin-top:15px; 
                                                     width:25rem">
-                ${student.student_name} | ${student.student_program}
+                ${student.student_name} | ${student.student_work}
             </button><br>`
         ).join('');
     }
@@ -39,7 +39,7 @@ class StudentList {
     }
     filterStudents(query, searchListContainer) {
         const filteredStudents = this.students.filter(student => {
-            const fullName = `${student.student_name} ${student.student_program}`;
+            const fullName = `${student.student_name} ${student.student_work}`;
             return fullName.toLowerCase().includes(query.toLowerCase());
         });
 
