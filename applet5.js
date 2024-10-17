@@ -79,3 +79,19 @@ async getWeatherData(city) {
   }
   return null;
 }
+
+async getWeatherDataByCoordinates(latitude, longitude) {
+  try {
+      const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${this.apiKey}&units=metric`);
+      if (response.ok) {
+          return await response.json();
+      }
+  } catch (error) {
+      console.error('Error fetching weather data by coordinates:', error);
+  }
+  return null;
+}
+}
+
+const apiKey = 'dcb430be2be2ad4ccdef2a3999b5505a'; 
+const weatherApp = new WeatherService(apiKey);
