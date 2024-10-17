@@ -93,5 +93,6 @@ async getWeatherDataByCoordinates(latitude, longitude) {
 }
 }
 
+
 const apiKey = 'dcb430be2be2ad4ccdef2a3999b5505a'; 
 const weatherApp = new WeatherService(apiKey);
