@@ -59,100 +59,31 @@
              <li><a class="dropdown-item" href="applet 2.html">applet-map</a></li>
              <li><a class="dropdown-item" href="applet -3.html">logger</a></li>
              <li><a class="dropdown-item" href="applet4.html">applet search</a></li>
+             <li><a class="dropdown-item" href="applet5.html">open wheather</a></li>
            </ul>
          </li>
        </ul>
      </div>
    </div>
  </nav>
- <div class="container mt-4"></div>
-        <h1>DONQUE APPLET GALLERY</h1>
-            <div class="input-group mb-3">
-                <span class="input-group-text">Search</span>
-                <input type="text" class="form-control search-input" placeholder="Type to search..." onkeyup="filterCards()">
-            </div>
-            <div class="card-group" id="cardGroup">
-                <div class="card" data-title="CARD 1">
-                   
-                    <div class="card-body">
-                        <h5 class="card-title">CARD 1</h5>
-                        <p class="card-text">hi im lloyd handsome everyday</p>
-                    </div>
-                </div>
-                <div class="card" data-title="CARD 2">
-                    
-                    <div class="card-body">
-                        <h5 class="card-title">CARD 2</h5>
-                        <p class="card-text">im lloyd super cute</p>
-                    </div>
-                </div>
-                <div class="card" data-title="CARD 3">
-                    
-                    <div class="card-body">
-                        <h5 class="card-title">CARD 3</h5>
-                        <p class="card-text">im lloyd so kind</p>
-                    </div>
-                </div>
-            </div>
-            <div class="card-group" id="cardGroup">
-                <div class="card" data-title="CARD 4">
-                   
-                    <div class="card-body">
-                        <h5 class="card-title">CARD 4</h5>
-                        
-                    </div>
-                </div>
-                <div class="card" data-title="CARD 5">
-                    
-                    <div class="card-body">
-                        <h5 class="card-title">CARD 5</h5>
-                        
-                    </div>
-                </div>
-                <div class="card" data-title="CARD 6">
-                    
-                    <div class="card-body">
-                        <h5 class="card-title">CARD 6</h5>
-                        
-                    </div>
-                </div>
-            </div>
-            <div class="card-group" id="cardGroup">
-                <div class="card" data-title="CARD 7">
-                   
-                    <div class="card-body">
-                        <h5 class="card-title">CARD 7</h5>
-                        
-                    </div>
-                </div>
-                <div class="card" data-title="CARD 8">
-                    
-                    <div class="card-body">
-                        <h5 class="card-title">CARD 8</h5>
-                        
-                    </div>
-                </div>
-                <div class="card" data-title="CARD 9">
-                    
-                    <div class="card-body">
-                        <h5 class="card-title">CARD 9</h5>
-                        
-                    </div>
-                </div>
-            </div>
-            <script>
-                function filterCards() {
-                    const input = document.querySelector('.search-input').value.toLowerCase();
-                    const cards = document.querySelectorAll('.card');
-                    cards.forEach(card => {
-                        const title = card.getAttribute('data-title').toLowerCase();
-                        if (title.includes(input)) {
-                            card.style.display = 'block'; 
-                        } else {
-                            card.style.display = 'none';
-                        }
-                    });
-                }
-            </script>
+ <div class="container">
+    <h1>Weather App</h1>
+
+    <input type="text" id="cityInput" placeholder="Enter city name" />
+    <button id="getWeatherBtn" class="btn btn-primary">Get Weather</button>
+<!--Via Geolocation-->
+<button id="getLocationBtn" class="btn btn-secondary">Use My Location</button>
+      
+<div id="weatherCard" class="weather-card" style="display: none;">
+    <br>
+    <h2 id="cityName"></h2>
+    <p id="temperature"></p>
+    <p id="description"></p>
+    <p id="humidity"></p>
+    <p id="windSpeed"></p>
+</div>
+</div>
+    
+
 </body>
 </html>
