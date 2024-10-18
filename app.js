@@ -46,3 +46,4 @@ console.log(`The number ${number} is: ${primeStatus}`);
 const testString = "racecar";
 palindromeStatus = isPalindrome(testString);
 console.log(`The string "${testString}" is: ${palindromeStatus}`);
+ 

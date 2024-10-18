@@ -1,8 +1,6 @@
 class WeatherApp {
-  constructor(apiKey) {
-      this.apiKey = apiKey;
-      
-      this.cityInput = document.getElementById('cityInput');
+  constructor() {
+       this.cityInput = document.getElementById('cityInput');
       this.getWeatherBtn = document.getElementById('getWeatherBtn');
 
       this.getLocationBtn = document.getElementById('getLocationBtn');
@@ -13,7 +11,8 @@ class WeatherApp {
       this.description = document.getElementById('description');
       this.humidity = document.getElementById('humidity');
       this.windSpeed = document.getElementById('windSpeed');
-     
+      this.APIKeyInput = document.getElementById('apiInput');
+      
       this.getWeatherBtn.addEventListener('click', () => this.fetchWeather());
       this.getLocationBtn.addEventListener('click', () => this.fetchWeatherByLocation());
   }
@@ -32,8 +31,23 @@ class WeatherApp {
 }
 
 class WeatherService extends WeatherApp {
+
+    constructor() {
+        super();
+        this.apiKey = '';
+    }
+
   async fetchWeather() {
-      const city = this.cityInput.value;
+
+    const city = this.cityInput.value;
+    this.apiKey = this.APIKeyInput.value.trim(); 
+
+    if (!this.apiKey) {
+        alert('Please enter your API key.');
+        return;
+    
+    }
+
       if (city) {
           const data = await this.getWeatherData(city);
           if (data) {
@@ -94,5 +108,5 @@ async getWeatherDataByCoordinates(latitude, longitude) {
 }
 
 
-const apiKey = 'dcb430be2be2ad4ccdef2a3999b5505a'; 
-const weatherApp = new WeatherService(apiKey);
+ 
+const weatherApp = new WeatherService();
