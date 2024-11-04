@@ -25,7 +25,7 @@ class TodoList {
         listItem.className = 'list-group-item todo-item';
         listItem.innerHTML = `
             <span class="task-text">${taskText}</span>
-            <span class="timestamp" style="display: block; margin-top: 0.5rem; color: gray;">Date Added: ${new Date().toLocaleString()}</span>
+            <span class="timestamp" style="display: block; margin-top: 0.5rem; color: orange;">Date Added: ${new Date().toLocaleString()}</span>
             <div style="margin-top: 0.5rem;">
                 <button class="btn btn-success btn-sm doneButton">Done</button>
                 <button class="btn btn-warning btn-sm editButton">Edit</button>
@@ -41,4 +41,8 @@ class TodoList {
 
         const buttons = taskItem.querySelectorAll('button');
         buttons.forEach(button => button.disabled = true);
+    }
+    updateTask(taskText) {
+        this.todoList.children[this.editingIndex].querySelector('.task-text').textContent = taskText;
+        this.resetEditing();
     }
